@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="my.docs : cours et exercices de Mathématiques, Physique et Informatique pour les étudiants de L1 MPI.">
+    <meta name="theme-color" content="#000000">
+    <title>my.docs - Portail Étudiant L1 MPI</title>
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="preload" as="image" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <noscript>
+        <div style="padding:24px;text-align:center;font-family:sans-serif;">
+            JavaScript est nécessaire pour utiliser my.docs. Veuillez l'activer dans votre navigateur.
+        </div>
+    </noscript>
+
+    <!-- ============================================================
+    PAGE DE CONNEXION
+    ============================================================ -->
+    <div class="page-connexion" id="page-connexion">
+        <!-- Blobs décoratifs -->
+        <div class="blob-conteneur">
+            <div class="blob blob-bleu"></div>
+            <div class="blob blob-jaune"></div>
+            <div class="blob blob-rouge"></div>
+            <div class="blob blob-blanc"></div>
+        </div>
+        <!-- Particules -->
+        <div class="particules">
+            <div class="particule"></div>
+            <div class="particule"></div>
+            <div class="particule"></div>
+            <div class="particule"></div>
+            <div class="particule"></div>
+            <div class="particule"></div>
+            <div class="particule"></div>
+        </div>
+
+        <!-- Carte de connexion -->
+        <div class="carte-connexion">
+            <div class="barre-tricolore">
+                <span class="bt-bleu"></span>
+                <span class="bt-jaune"></span>
+                <span class="bt-rouge"></span>
+            </div>
+
+            <div class="logo-connexion">
+                <div class="logo-halo" aria-hidden="true"></div>
+                <img class="logo-image" src="logo.png" width="1000" height="835"
+                     alt="my.docs" decoding="async">
+                <p class="slogan"><span class="slogan-trait"></span>Vos documents, toujours avec vous<span class="slogan-trait"></span></p>
+                <div class="sous-titre">Portail Étudiant L1 MPI</div>
+            </div>
+
+            <div class="message-erreur" id="msg-erreur" role="alert">
+                ⚠️ Email ou mot de passe incorrect. Veuillez réessayer.
+            </div>
+            <div class="message-succes" id="msg-succes" role="status">
+                ✅ Connexion réussie ! Bienvenue sur my.docs.
+            </div>
+
+            <form class="formulaire-connexion" id="formulaire-connexion" autocomplete="off" novalidate>
+                <div class="groupe-champ">
+                    <label for="email">Adresse Email</label>
+                    <div class="champ-saisie">
+                        <input type="email" id="email" name="email" placeholder="etudiant@my.docs" required>
+                        <span class="icone-champ">📧</span>
+                    </div>
+                </div>
+                <div class="groupe-champ">
+                    <label for="mot-de-passe">Mot de passe</label>
+                    <div class="champ-saisie">
+                        <input type="password" id="mot-de-passe" name="mot-de-passe" placeholder="••••••••" required minlength="6">
+                        <span class="icone-champ">🔒</span>
+                    </div>
+                </div>
+                <div class="lien-oublie">
+                    <a href="#" id="lien-oublie">Mot de passe oublié ?</a>
+                </div>
+                <button type="submit" class="btn-connexion" id="btn-connexion">
+                    <span class="btn-texte">Se Connecter</span>
+                    <span class="spinner"></span>
+                </button>
+            </form>
+
+            <div class="info-demo">
+                🔑 <strong>Démo :</strong> utilisez n'importe quel email et mot de passe (min. 6 caractères) <span class="badge-demo">ACCÈS LIBRE</span>
+            </div>
+
+            <div class="footer-carte">
+                <span class="tricolore-texte">
+                    <span class="tc-bleu">Maths</span> ·
+                    <span class="tc-jaune">Physique</span> ·
+                    <span class="tc-rouge">Info</span>
+                </span>
+                <br>© 2026 my.docs — Tous droits réservés
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+    APPLICATION PRINCIPALE
+    ============================================================ -->
+    <div class="application" id="application">
+
+        <!-- En-tête -->
+        <header class="entete-app" id="entete-app">
+            <div class="logo-app" id="logo-app" title="Retour à l'accueil">
+                <img class="logo-icone" src="logo-icon.png" width="256" height="256" alt="" decoding="async">
+                <div class="logo-texte">
+                    my<span class="docs">.docs</span>
+                </div>
+            </div>
+
+            <nav class="nav-principale" id="nav-principale" aria-label="Navigation principale">
+                <button type="button" class="nav-item actif" data-nav="accueil" title="Accueil">🏠 Accueil</button>
+                <button type="button" class="nav-item nav-maths" data-nav="maths" title="Mathématiques">📐 Maths</button>
+                <button type="button" class="nav-item nav-physique" data-nav="physique" title="Physique">⚡ Physique</button>
+                <button type="button" class="nav-item nav-info" data-nav="info" title="Informatique">💻 Info</button>
+            </nav>
+
+            <div class="zone-utilisateur">
+                <div class="info-utilisateur">
+                    <span class="nom-utilisateur" id="nom-utilisateur">Étudiant MPI</span>
+                    <span class="role-utilisateur" id="role-utilisateur">L1 — Semestre 1</span>
+                </div>
+                <div class="avatar-utilisateur" id="avatar-utilisateur" title="Accueil">E</div>
+                <button type="button" class="btn-deconnexion" id="btn-deconnexion" title="Se déconnecter">↪ Déconnexion</button>
+            </div>
+        </header>
+
+        <!-- Contenu principal -->
+        <main class="contenu-principal" id="contenu-principal">
+
+            <!-- Fil d'Ariane -->
+            <div class="fil-ariane" id="fil-ariane">
+                <span class="fa-item" data-nav="accueil">🏠 Accueil</span>
+                <span class="fa-separateur">›</span>
+                <span class="fa-actuel" id="fa-actuel">Tableau de bord</span>
+            </div>
+
+            <!-- Zone de contenu dynamique -->
+            <div id="zone-contenu">
+                <!-- Le contenu sera injecté par JavaScript -->
+            </div>
+
+        </main>
+
+        <!-- Pied de page -->
+        <footer class="pied-de-page">
+            <div class="pied-tricolore">
+                <span style="background: var(--bleu);"></span>
+                <span style="background: var(--jaune);"></span>
+                <span style="background: var(--rouge);"></span>
+            </div>
+            <strong>my.docs</strong> — Plateforme de cours et d'exercices pour L1 MPI
+            <br>Mathématiques · Physique · Informatique
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
